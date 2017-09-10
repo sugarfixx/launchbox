@@ -6,6 +6,7 @@
  * Date: 09/09/17
  * Time: 15:15
  */
+namespace App;
 class Settings
 {
 

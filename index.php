@@ -2,6 +2,7 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+session_start();
 /**
  * Created by PhpStorm.
  * User: sugarfixx
@@ -9,17 +10,12 @@ error_reporting(E_ALL);
  * Time: 15:26
  */
 
-include __DIR__ . '/src/Settings.php';
-include __DIR__ . '/src/Commander.php';
-
-$settings = new Settings();
-//print_r( $settings->getUser());
-// print_r( $settings->getCommands());
-if (isset($_POST['command'])) {
-    $command = $_POST['command'];
-    $commander = new Commander();
-    print_r($commander->execute($command));
-}
-
+require_once  __DIR__ . '/includes.php';
+$app = new \App\App();
+$app->run();
+$title = $app->title;
+$notify = $app->notification;
+$body = $app->body;
+include "src/template.php";
 
 
