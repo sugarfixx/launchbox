@@ -5,9 +5,8 @@
       "password" : "secret"
     },
     "commands" : [
-      {"name" : "NPM build prod", "action" : "exec", "command" : "cd ~/var/www/target/ && npm run build:prod"},
-      {"name" : "Copy home", "action" : "exec", "command" : "cd ~/var/www/target/ && cp home.html . index.html"},
-      {"name" : "Who am I", "action" : "exec", "command" : "whoami"}
+      {"name" : "Who am I", "action" : "exec", "command" : "whoami"},
+      {"name" : "Make file test.text", "action" : "exec", "command" : "cd .. && touch test.text"}
     ]
   }
 }
